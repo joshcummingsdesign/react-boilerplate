@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addApiData 1`] = `
+Object {
+  "payload": Object {
+    "albumId": 1,
+    "id": 1,
+    "thumbnailUrl": "https://via.placeholder.com/150/92c952",
+    "title": "accusamus beatae ad facilis cum similique qui sunt",
+    "url": "https://via.placeholder.com/600/92c952",
+  },
+  "type": "ADD_API_DATA",
+}
+`;
+
+exports[`setSearchTerm 1`] = `
+Object {
+  "payload": "qui",
+  "type": "SET_SEARCH_TERM",
+}
+`;

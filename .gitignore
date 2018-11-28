@@ -1,0 +1,10 @@
+### System ###
+.DS_Store
+.idea
+.vscode
+
+### Build ###
+coverage
+node_modules
+public/*
+!public/index.html

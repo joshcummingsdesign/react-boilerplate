@@ -1,0 +1,232 @@
+/*=============================================
+=                    Post                     =
+=============================================*/
+
+.s-post {
+
+  h1 {
+    @extend .h1;
+  }
+
+  h2 {
+    @extend .h2;
+  }
+
+  h3 {
+    @extend .h3;
+  }
+
+  h4 {
+    @extend .h4;
+  }
+
+  h5 {
+    @extend .h5;
+  }
+
+  h6 {
+    @extend .h6;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    margin: $padding-xs 0;
+  }
+
+  b, strong {
+    font-weight: $bold;
+    color: $grey;
+  }
+
+  i, em {
+    font-style: italic;
+  }
+
+  sup {
+    vertical-align: super;
+    font-size: smaller;
+  }
+
+  figcaption {
+    color: $grey;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px dashed $grey;
+    width: 100%;
+    margin: $padding-xxs 0;
+    display: inline-block;
+  }
+
+  details {
+
+    summary {
+      cursor: pointer;
+      display: inline-block;
+      color: $grey;
+      transition: color $time $easing;
+
+      &:focus, &:hover {
+        color: $grey;
+      }
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+  }
+
+  /*----------  Links  ----------*/
+
+  a {
+    color: $text-black;
+    text-decoration: underline;
+    transition: color $time $easing;
+
+    &:focus, &:hover {
+      color: $grey;
+    }
+  }
+
+  /*----------  Lists  ----------*/
+
+  ul {
+    list-style-type: disc;
+    padding-left: $padding-xs;
+  }
+
+  ol {
+    list-style-type: decimal;
+    list-style-type: none;
+
+    li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: $padding-xs;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: counter(step-counter)'.';
+        font-weight: $bold;
+      }
+
+      // p tag inside ordered list
+      // usually for syntax highlighting
+      p {
+        display: inline;
+      }
+    }
+
+    // Nested ul
+    ul {
+      li {
+        counter-reset: step-counter;
+        padding-left: 0;
+        font-weight: $normal;
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    // Nested ol
+    ol {
+      list-style-type: lower-roman;
+      li {
+        counter-reset: step-counter;
+        padding-left: 0;
+        margin-left: $padding-xs * 2;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  li {
+    margin: 1rem 0;
+    color: $grey;
+  }
+
+  /*----------  Syntax Highlighting  ----------*/
+
+  // `this syntax`
+  p code, li > code {
+    background-color: $grey;
+  }
+
+  // code blocks - outer wrapper
+  div.highlight {
+    margin: $padding-xs 0;
+  }
+
+  /*----------  Footnotes  ----------*/
+
+  .footnotes {
+    overflow-x: scroll;
+    ol {
+      padding: 0;
+      li {
+        padding: 0;
+        &:before {
+          content: normal;
+        }
+        p {
+          background-color: $grey;
+          display: inline-block;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  /*----------  Blockquotes  ----------*/
+
+  blockquote {
+    border-left: 5px solid $grey;
+    margin: $padding-xs 0;
+    padding: 1rem 2rem;
+    quotes: "\201C""\201D""\2018""\2019";
+
+    &:before {
+      content: open-quote;
+    }
+
+    &:after {
+      content: close-quote;
+      font-size: 0;
+    }
+  }
+
+  blockquote p {
+    display: inline;
+  }
+
+  /*----------  Videos  ----------*/
+
+  iframe {
+    width: 100%;
+  }
+
+  /*----------  Callouts  ----------*/
+
+  .m-callout {
+    p {
+      margin: 1rem 0;
+    }
+  }
+
+  /*----------  Flags  ----------*/
+
+  .m-flag {
+    p {
+      margin: 1rem 0;
+    }
+  }
+}

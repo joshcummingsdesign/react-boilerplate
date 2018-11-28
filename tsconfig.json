@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+      "outDir": "./public/assets/scripts/",
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "jsx": "react",
+      "target": "es5",
+      "skipLibCheck": true,
+      "noUnusedLocals": true,
+      "lib": [
+        "dom",
+        "es7"
+      ]
+  },
+  "include": [
+      "./src/scripts/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**/*"
+  ]
+}
